@@ -1,0 +1,15 @@
+service: rankly-lamba
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+  stage: prod
+
+functions:
+  rank:
+    handler: handler.rank
+    events:
+      - http:
+          path: rank
+          method: get
